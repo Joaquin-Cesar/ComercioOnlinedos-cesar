@@ -1,0 +1,31 @@
+.NavBar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+   
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+   
+    list-style-type: none;
+   
+}
+li{
+    margin-left: 25px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+button{
+    border: 0ch;
+    background-color: white;
+}
+
