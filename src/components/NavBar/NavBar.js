@@ -20,6 +20,8 @@ const NavBar = () =>{
              "claseInactive"} to="/productos/bebida">Bebida</NavLink>
              <NavLink className={({isActive})=> isActive ? "claseActive" : 
              "claseInactive"} to="/productos/postre">Postre</NavLink>
+            
+
 
 
            </div> 

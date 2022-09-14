@@ -1,22 +1,30 @@
 import React from 'react'
-import Items from '../Items/Items'
 
+import { useState } from 'react'
+import ItemCount from '../ItemCount/ItemCount'
 const ItemsDetail = ({itemsDetail} ) => {
  console.log("itemsDetail:",itemsDetail)
-
-
+const [contador,setContador] =useState(0)
+ 
+const onAdd = (dato)=>{
+   setContador(dato)
+}
      
-     return(
-        <>
-        <Items 
-        id={itemsDetail.id}
-        nombre={itemsDetail.nombre}
-        precio={itemsDetail.precio}
-        imagen={itemsDetail.imagen}
-        
-        />
-        </> 
-     )
+return (
+   <>
+
+     <div className='contenedorPadre'>
+            <img src={itemsDetail.imagen} alt={itemsDetail.nombre}/>
+            <div>
+              <h5>{itemsDetail.nombre}</h5>
+            <p> {itemsDetail.precio}</p>
+              <h6>{contador}</h6>
+               <ItemCount stock={10} initial={0} onAdd={onAdd}/>
+            </div>
+          </div>
+ 
+   </>
+  )
 
 }
 

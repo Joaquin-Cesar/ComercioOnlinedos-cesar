@@ -11,7 +11,7 @@ const Items = ({id, nombre, precio, imagen}) => {
               <h5>{nombre}</h5>
             <p> {precio}</p>
                 <Link to={`/items/${id}`}>
-              <button className={id}>Comprar</button>
+              <button className={id}>Ver Detalles</button>
                 </Link>
             </div>
           </div>
