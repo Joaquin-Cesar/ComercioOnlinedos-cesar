@@ -4,9 +4,9 @@ const Items = ({id, nombre, precio, imagen}) => {
 
  return (
    <>
-
+     
      <div className='contenedorPadre'>
-            <img src={imagen} alt={nombre}/>
+            <img src={imagen} alt={nombre} className="ImagenDelProducto"/>
             <div>
               <h5>{nombre}</h5>
             <p> {precio}</p>
@@ -15,7 +15,7 @@ const Items = ({id, nombre, precio, imagen}) => {
                 </Link>
             </div>
           </div>
- 
+          
    </>
   )
 }

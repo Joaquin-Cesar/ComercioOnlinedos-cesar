@@ -1,5 +1,5 @@
 import logo from '../../logo.svg';
-import "./styles.css";
+import "../Estilo/estilo.css";
 import CartWidget from './CartWidget/CartWidget';
 import { NavLink } from 'react-router-dom';
 const NavBar = () =>{
@@ -8,24 +8,37 @@ const NavBar = () =>{
         <div className='NavBar-container'>
           <div> <img src={logo} width={"50px"} alt= "logo"/></div>  
           <div>
+            <ul className='ContenedorProductos'>
+              <li className='TipoDeProducto'>
              <NavLink className={({isActive})=> isActive ? "claseActive" : 
              "claseInactive"} to="/">Todos</NavLink>
+             </li>
+             <li className='TipoDeProducto'>
              <NavLink className={({isActive})=> isActive ? "claseActive" : 
              "claseInactive"} to="/productos/hamburguesa">Hamburguesa</NavLink>
+               </li>
+              <li className='TipoDeProducto'>
              <NavLink className={({isActive})=> isActive ? "claseActive" : 
              "claseInactive"} to="/productos/pizza">Pizza</NavLink>
+               </li>
+             <li className='TipoDeProducto'> 
              <NavLink className={({isActive})=> isActive ? "claseActive" : 
              "claseInactive"} to="/productos/complemento">Complementos</NavLink>
+                 </li>
+              <li className='TipoDeProducto'> 
              <NavLink className={({isActive})=> isActive ? "claseActive" : 
              "claseInactive"} to="/productos/bebida">Bebida</NavLink>
+                </li>
+              <li className='TipoDeProducto'>
              <NavLink className={({isActive})=> isActive ? "claseActive" : 
              "claseInactive"} to="/productos/postre">Postre</NavLink>
-            
+              </li>
+            </ul>
 
 
 
            </div> 
-          <div><button><CartWidget/></button></div> 
+          <div><button className='Carrito'><CartWidget/></button></div> 
         </div>
       
     )

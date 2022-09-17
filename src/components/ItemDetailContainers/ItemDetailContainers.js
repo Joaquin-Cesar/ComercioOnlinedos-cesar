@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemsData from '../ItemsDetail/ItemsDetail';
 import data from '../ItemListContainers/mock-data';
+import "../Estilo/estilo.css"
 import { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
 const ItemDetailContainers =() => {
@@ -23,7 +24,7 @@ const ItemDetailContainers =() => {
       getProducto();
   },[productId])
 
-  console.log('item:', item)
+
     return (
         <>
             <ItemsData itemsDetail={item}/>

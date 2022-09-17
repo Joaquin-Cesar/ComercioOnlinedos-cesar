@@ -1,5 +1,5 @@
 import React from 'react';
-import '../ItemListContainers/estilo.css'
+import '../Estilo/estilo.css'
 import data from './mock-data';
 import ItemsList from '../ItemsList/ItemsList';
 import { useState, useEffect } from 'react';
