@@ -4,7 +4,7 @@ export const CartContext = React.createContext();
 
 export const CartProviders = ({children}) =>{
     const [ProductoCartList,setProductoCartList]=useState([])
-    
+    console.log(ProductoCartList)
     const addItem =(item, quantity) =>{
 
    
@@ -14,8 +14,17 @@ export const CartProviders = ({children}) =>{
         }
         
        const newArreglo = [... ProductoCartList]
+       newProducts.quantityPrice = newProducts.quantity * newProducts.precio
             newArreglo.push(newProducts)
             setProductoCartList(newArreglo)
+        }
+         
+        const PrecioTotal = () =>{
+          return ProductoCartList.reduce((acc, item)=> acc +item.quantityPrice, 0)
+        }
+
+        const ProductosTotal = () =>{
+          return ProductoCartList.reduce((acc, item)=> acc +item.quantity, 0)
         }
 
         const filtroItem = (item, quantity) => {
@@ -26,6 +35,9 @@ export const CartProviders = ({children}) =>{
            console.log("foundProductIndex", indiceProductoDuplicado)
            const newArreglo = [...ProductoCartList];
            newArreglo[indiceProductoDuplicado].quantity += quantity;
+           newArreglo[indiceProductoDuplicado].quantityPrice =   newArreglo[indiceProductoDuplicado].quantity *  
+           newArreglo[indiceProductoDuplicado].precio
+
            setProductoCartList(newArreglo);
           };
        
@@ -54,7 +66,7 @@ export const CartProviders = ({children}) =>{
 
     return(
         
-        <CartContext.Provider value={{ProductoCartList, addItem, removeItem, ClearCart, filtroItem, isInCart}}>
+        <CartContext.Provider value={{ProductoCartList, addItem, removeItem, ClearCart, filtroItem, isInCart, PrecioTotal, ProductosTotal}}>
              {children}
         </CartContext.Provider>
     )
