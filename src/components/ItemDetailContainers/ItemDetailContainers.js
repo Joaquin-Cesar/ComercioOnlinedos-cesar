@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemsData from '../ItemsDetail/ItemsDetail';
-import data from '../ItemListContainers/mock-data';
+import { db } from '../../utils/firebise'
+import {doc,getDoc} from "firebase/firestore"
 import "../Estilo/estilo.css"
 import { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
@@ -8,20 +9,19 @@ const ItemDetailContainers =() => {
   const {productId} = useParams();
   const [item, setItem] = useState({});
 
-  const getItem = (id)=>{
-      return new Promise((resolve, reject)=>{
-          const item = data.find(item=>item.id === parseInt(id));
-          resolve(item)
-      })
-  }
+
 
   useEffect(()=>{
-      const getProducto = async()=>{
-          const producto = await getItem(productId);
-         
-          setItem(producto);
+    const getItem =async ()=>{
+        const query = doc (db, "Items", productId)
+        const response = await getDoc(query)
+        const NewProduct ={
+            ...response.data(),
+            id: response.id 
+          }
+          setItem(NewProduct)
       }
-      getProducto();
+      getItem()
   },[productId])
 
 
