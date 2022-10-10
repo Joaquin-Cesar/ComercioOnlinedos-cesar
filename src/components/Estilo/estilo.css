@@ -1,4 +1,7 @@
 /************************************************Estilo del NavBar*****************************************/
+.logo{
+    margin-left: 10px;
+}
 
 .NavBar-container{
     display: flex;
@@ -8,7 +11,12 @@
     width: 100%;
     height: 70px;
     background-color: white;
-   
+    position: sticky;
+    top: 0.1px;
+    z-index: 1;
+}
+main{
+    z-index: -1;
 }
 
 .ContenedorProductos{
@@ -105,10 +113,25 @@ hr{
 }
 
 /*////////////////////////////////////////////////////////////CartContainer////////////////////////////////*/
-.CartProducto{
-    border: solid 2px;
-    width: 200px;
+.table{
     margin: auto;
-    margin-bottom: 15px;
+    }
+
+th,td{
+margin: 5000px;
 }
 
+
+.formulario h2{
+    border-top: solid black;
+}
+.contenedForm{
+  
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+    margin-right: 590px;
+}
+.form{
+    margin-bottom: 10px;
+}

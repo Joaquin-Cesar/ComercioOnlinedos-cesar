@@ -1,38 +1,29 @@
-import logo from '../../logo.svg';
+import logo from './logo.png'
 import "../Estilo/estilo.css";
 import CartWidget from './CartWidget/CartWidget';
 import { NavLink } from 'react-router-dom';
 const NavBar = () =>{
+
+  const link =[{direccion:"/", nombre:"Todos"},
+               {direccion:"/productos/hamburguesa", nombre:"Hamburguesa"},
+               {direccion:"/productos/pizza", nombre:"Pizza"},
+               {direccion:"/productos/complemento", nombre:"Complementos"},
+               {direccion:"/productos/bebida", nombre:"Bebida"},
+               {direccion:"/productos/postre", nombre:"Postre"}]
     return(
          
         <div className='NavBar-container'>
-          <div> <img src={logo} width={"50px"} alt= "logo"/></div>  
+          <div className='logo'> <img src={logo} width={"40px"} alt= "logo"/></div>  
           <div>
             <ul className='ContenedorProductos'>
-              <li className='TipoDeProducto'>
+              {
+                link.map(el=>(
+                  <li className='TipoDeProducto'>
              <NavLink className={({isActive})=> isActive ? "claseActive" : 
-             "claseInactive"} to="/">Todos</NavLink>
+             "claseInactive"} to={el.direccion}>{el.nombre}</NavLink>
              </li>
-             <li className='TipoDeProducto'>
-             <NavLink className={({isActive})=> isActive ? "claseActive" : 
-             "claseInactive"} to="/productos/hamburguesa">Hamburguesa</NavLink>
-               </li>
-              <li className='TipoDeProducto'>
-             <NavLink className={({isActive})=> isActive ? "claseActive" : 
-             "claseInactive"} to="/productos/pizza">Pizza</NavLink>
-               </li>
-             <li className='TipoDeProducto'> 
-             <NavLink className={({isActive})=> isActive ? "claseActive" : 
-             "claseInactive"} to="/productos/complemento">Complementos</NavLink>
-                 </li>
-              <li className='TipoDeProducto'> 
-             <NavLink className={({isActive})=> isActive ? "claseActive" : 
-             "claseInactive"} to="/productos/bebida">Bebida</NavLink>
-                </li>
-              <li className='TipoDeProducto'>
-             <NavLink className={({isActive})=> isActive ? "claseActive" : 
-             "claseInactive"} to="/productos/postre">Postre</NavLink>
-              </li>
+                ))
+                }
             </ul>
 
 

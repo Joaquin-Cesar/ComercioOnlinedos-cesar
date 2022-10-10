@@ -5,9 +5,7 @@ const ItemsList = ({itemsList}) => {
 
   return (
     <>
-  {itemsList.map((producto)=>{
-
-  return(
+  {itemsList.map((producto)=>(
     <Items 
     id={producto.id}
     nombre={producto.nombre}
@@ -15,7 +13,7 @@ const ItemsList = ({itemsList}) => {
     imagen={producto.imagen}
     />
    )
-    })}
+    )}
     </>
   )
 }

@@ -28,8 +28,7 @@ export const CartProviders = ({children}) =>{
         }
 
         const filtroItem = (item, quantity) => {
-        
-           const productoDuplicado= ProductoCartList.find( prod => prod.id === item.id);
+         const productoDuplicado= ProductoCartList.find( prod => prod.id === item.id);
            console.log("productoDuplicado",productoDuplicado)
            const indiceProductoDuplicado = ProductoCartList.indexOf(productoDuplicado);
            console.log("foundProductIndex", indiceProductoDuplicado)
@@ -39,6 +38,7 @@ export const CartProviders = ({children}) =>{
            newArreglo[indiceProductoDuplicado].precio
 
            setProductoCartList(newArreglo);
+           localStorage.setItem("producto", JSON.stringify(newArreglo))
           };
        
           const isInCart = (itemId) => {
@@ -63,6 +63,7 @@ export const CartProviders = ({children}) =>{
     const ClearCart = ()=>{
         setProductoCartList([])
     }
+  
 
     return(
         

@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Explicación del proyecto:
+
+Mi proyecto final es un prototipo de como sería un E-commers. Practicamente el producto que se vende son alimentos como un local de comida rápida como por ejemplo Macdonald. 
+Consta de unapagina de inicio donde estara todos los productos a venta. En la parte superior se encontara el navbar donde atraves de los link podra viajar a los tipos de productos que, provientes de una base de datos, quiera comprar.Ademas al tocar o inspeccionar un producto podra ver detalladamente su información y elegir la cantidad que quiera llevar al carro.Luego de esta acción el usuario podra ir al carrito para terminar con la compra y generrar una orden que se guardara en la base de datos.
+
